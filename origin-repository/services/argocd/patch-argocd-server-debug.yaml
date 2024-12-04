@@ -1,0 +1,4 @@
+# enable debugging information on argocd-server
+- op: add
+  path: /spec/template/spec/containers/0/args/-
+  value: --loglevel=debug
