@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: deployment-repository/services/guestbook.yaml
+    path: deployment-repository/services/guestbook
     repoURL: https://github.com/chdalski/argocd-test
     targetRevision: HEAD
   syncPolicy:

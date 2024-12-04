@@ -5,8 +5,8 @@ metadata:
   namespace: guestbook
 spec:
   ports:
-  - port: 80
-    targetPort: 80
+    - port: 80
+      targetPort: 80
   selector:
     app: guestbook-ui
 ---
@@ -27,7 +27,7 @@ spec:
         app: guestbook-ui
     spec:
       containers:
-      - image: gcr.io/heptio-images/ks-guestbook-demo:0.1
-        name: guestbook-ui
-        ports:
-        - containerPort: 80
+        - image: gcr.io/heptio-images/ks-guestbook-demo:0.1
+          name: guestbook-ui
+          ports:
+            - containerPort: 80
