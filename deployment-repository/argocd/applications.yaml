@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: deployment-repository/services/argocd
+    path: deployment-repository/services/argocd.yaml
     repoURL: https://github.com/chdalski/argocd-test
     targetRevision: HEAD
 ---
@@ -24,7 +24,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: deployment-repository/services/guestbook
+    path: deployment-repository/services/guestbook.yaml
     repoURL: https://github.com/chdalski/argocd-test
     targetRevision: HEAD
   syncPolicy:
