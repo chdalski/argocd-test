@@ -12,24 +12,24 @@ spec:
     path: deployment-repository/services/argocd
     repoURL: https://github.com/chdalski/argocd-test
     targetRevision: HEAD
-# ---
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: guestbook
-#   namespace: argocd
-# spec:
-#   destination:
-#     namespace: guestbook
-#     server: https://kubernetes.default.svc
-#   project: default
-#   source:
-#     path: deployment-repository/services/guestbook
-#     repoURL: https://github.com/chdalski/argocd-test
-#     targetRevision: HEAD
-#   syncPolicy:
-#     automated:
-#       prune: true
-#       selfHeal: true
-#     syncOptions:
-#       - CreateNamespace=true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: guestbook
+  namespace: argocd
+spec:
+  destination:
+    namespace: guestbook
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: deployment-repository/services/guestbook
+    repoURL: https://github.com/chdalski/argocd-test
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

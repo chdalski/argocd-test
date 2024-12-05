@@ -14,10 +14,6 @@ spec:
     path: deployment-repository/argocd
     repoURL: https://github.com/chdalski/argocd-test
     targetRevision: HEAD
-    directory:
-      include:
-        - projects.yaml
-        - applications.yaml
   syncPolicy:
     automated:
       prune: true
