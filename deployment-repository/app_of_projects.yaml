@@ -3,8 +3,6 @@ kind: Application
 metadata:
   name: app-of-projects
   namespace: argocd
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     namespace: argocd
@@ -15,7 +13,7 @@ spec:
     repoURL: https://github.com/chdalski/argocd-test
     targetRevision: HEAD
     directory:
-      exclude: applications.yaml
+      include: projects.yaml
   syncPolicy:
     automated:
       prune: true
