@@ -15,7 +15,9 @@ spec:
     repoURL: https://github.com/chdalski/argocd-test
     targetRevision: HEAD
     directory:
-      exclude: projects.yaml
+      include:
+        - projects.yaml
+        - applications.yaml
   syncPolicy:
     automated:
       prune: true
