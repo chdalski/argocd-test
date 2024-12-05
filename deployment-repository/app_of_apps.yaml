@@ -9,11 +9,12 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: deployment-repository/argocd
+    path: deployment-repository/apps
     repoURL: https://github.com/chdalski/argocd-test
     targetRevision: HEAD
-    # directory:
-    #   include: applications.yaml
+    directory:
+      include: "*/argo_app.yaml"
+      recurse: true
   syncPolicy:
     automated:
       prune: true

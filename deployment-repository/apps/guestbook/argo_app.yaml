@@ -1,18 +1,22 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app-of-projects
+  name: guestbook
   namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: argocd
+    namespace: guestbook
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: deployment-repository/projects
+    path: deployment-repository/apps/guestbook/resources
     repoURL: https://github.com/chdalski/argocd-test
     targetRevision: HEAD
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
